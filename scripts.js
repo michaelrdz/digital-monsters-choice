@@ -8,6 +8,7 @@ libAudios["Agumon"] = "audios/sound_roar1.wav";
 libAudios["Gabumon"] = "audios/sound_roar2.wav";
 libAudios["Gatomon"] = "audios/sound_roar3.wav";
 
+//Pakiman class, all the global characteristics of the digimons
 class Pakiman {
     constructor(setIndex, setName, setHp, setAttk) {
         this.index = setIndex;
@@ -27,6 +28,7 @@ class Pakiman {
     }
 }
 
+//Click on buddy choice
 function digimonClick(name){
     let etiquetaAudio = document.createElement("audio");
     etiquetaAudio.setAttribute("src", libAudios[collection[name].name]);
@@ -35,11 +37,12 @@ function digimonClick(name){
 }
 
 var collection = [];
-
+//Add digimons to the collection
 collection.push(new Pakiman(0, "Agumon", 1220, 380));
 collection.push(new Pakiman(1, "Gabumon", 1360, 300));
 collection.push(new Pakiman(2, "Gatomon", 1400, 280));
 
+//Read and draw saved digimons
 for(var digimons of collection) {
     digimons.show();
 }
